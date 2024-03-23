@@ -6,7 +6,7 @@ import SolarGrid from "../components/SolarGrid";
 import usePanelUpdates from "../hooks/usePanelUpdates";
 
 export default function Page() {
-    const { latestData, totalYield, weakPanels, healthyPanels } = usePanelUpdates();
+    const { latestData, totalOutputKWh, weakPanels, healthyPanels } = usePanelUpdates();
 
     return (
         <>
@@ -15,7 +15,7 @@ export default function Page() {
             </Box>
             <Container p="4" maxW="7xl" position="relative" zIndex="1">
                 <Overview
-                    totalYield={totalYield}
+                    totalYield={totalOutputKWh}
                     totalPanels={latestData.length}
                     healthyPanels={healthyPanels}
                     weakPanels={weakPanels}

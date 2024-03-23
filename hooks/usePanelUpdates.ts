@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 const usePanelUpdates = () => {
     const [latestData, setLatestData] = useState([]);
     const [totalYield, setTotalYield] = useState(0);
+    const [totalOutputKWh, setTotalOutputKWh] = useState(0);
     const [weakPanels, setWeakPanels] = useState(0);
     const [healthyPanels, setHealthyPanels] = useState(0);
     const { data } = useQuery({
@@ -36,14 +37,15 @@ const usePanelUpdates = () => {
 
             const totalOutputInKWh = totalOutput / 1000;
 
-            setTotalYield(parseFloat(totalOutputInKWh.toFixed(2)));
+            setTotalYield(totalOutput);
+            setTotalOutputKWh(parseFloat(totalOutputInKWh.toFixed(2)));
             setWeakPanels(weakPanelsCount);
             setHealthyPanels(healthyPanelsCount);
             setLatestData(data.slice(-30));
         }
     }, [data]);
 
-    return { latestData, totalYield, weakPanels, healthyPanels };
+    return { latestData, totalOutputKWh, weakPanels, healthyPanels };
 };
 
 export default usePanelUpdates;
