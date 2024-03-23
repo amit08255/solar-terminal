@@ -13,8 +13,8 @@ type Props = {
 
 function SolarGrid({ data }:Props) {
     return (
-        <Box rounded="lg" w="full" pb="4" bg="white" shadow="md" border="1.5px" borderColor="gray.100">
-            <Text borderTopLeftRadius="lg" borderTopRightRadius="lg" bg="blackAlpha.100" fontSize="md" fontWeight="bold" mb="6" px="4" py="3">Panel Monitoring Grid</Text>
+        <Box data-testid="monitoring-grid" rounded="lg" w="full" pb="4" bg="white" shadow="md" border="1.5px" borderColor="gray.100">
+            <Text as="h4" borderTopLeftRadius="lg" borderTopRightRadius="lg" bg="blackAlpha.100" fontSize="md" fontWeight="bold" mb="6" px="4" py="3">Panel Monitoring Grid</Text>
             <Grid px="4" templateColumns={{ sm: 'repeat(3, 1fr)', md: 'repeat(5, 1fr)', lg: 'repeat(6, 1fr)' }} gap={2}>
                 {
                     data.map((item) => (

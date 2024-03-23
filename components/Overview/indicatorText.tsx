@@ -12,7 +12,7 @@ function OverviewIndicatorText({
     color, text, className, mr,
 }:Props) {
     return (
-        <Box pb="4" display="flex" alignItems="center" minW="max-content">
+        <Box data-testid="overview-indicator-stats" pb="4" display="flex" alignItems="center" minW="max-content">
             <Box
                 data-testid="indicator"
                 height="8px"

@@ -14,6 +14,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "test:e2e": "cypress open",
     "validate": "npm run lint && npm run test",
     "postinstall": "npx husky uninstall && npx husky install && npx husky add .husky/pre-commit \"node_modules/.bin/lint-staged && npm run test && npm run build\""
   },
@@ -53,6 +54,7 @@
     "babel-jest": "^29.7.0",
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-styled-components": "^2.1.4",
+    "cypress": "^13.7.1",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-import-resolver-babel-module": "^5.3.2",

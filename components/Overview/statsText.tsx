@@ -12,7 +12,7 @@ function OverviewStatsText({
     color, value, unit, label,
 }:Props) {
     return (
-        <Box display="flex" alignItems="center" pb="4">
+        <Box data-testid="overview-text-stats" display="flex" alignItems="center" pb="4">
             <Text fontSize="sm" color={color}>{label}</Text>
             <Text ml="1.5" fontSize="md" fontWeight="bold">{value}</Text>
             <Text ml="1.5" color="blackAlpha.600" fontSize="md" fontWeight="bold">{unit}</Text>
