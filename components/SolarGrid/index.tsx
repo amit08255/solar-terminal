@@ -6,7 +6,6 @@ import {
 type Props = {
     data: Array<{
         id: number|string,
-        time: string,
         wattage: number,
         voltage: number,
     }>,
@@ -20,8 +19,9 @@ function SolarGrid({ data }:Props) {
                 {
                     data.map((item) => (
                         <GridItem
+                            data-testid="solar-grid-cell"
                             rounded="md"
-                            key={`${item.id}-${item.time}`}
+                            key={item.id}
                             p="2"
                             bg={item.voltage < 10 && item.wattage < 200 ? 'red.400' : 'green.400'}
                             textAlign="center"
@@ -30,14 +30,10 @@ function SolarGrid({ data }:Props) {
                             color="white"
                         >
                             <Text>
-                                {item.voltage}
-                                {' '}
-                                V
+                                {`${item.voltage} V`}
                             </Text>
                             <Text>
-                                {item.wattage}
-                                {' '}
-                                W
+                                {`${item.wattage} W`}
                             </Text>
                         </GridItem>
                     ))
