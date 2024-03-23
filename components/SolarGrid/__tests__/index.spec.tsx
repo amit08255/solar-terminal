@@ -41,8 +41,8 @@ const data = [
     },
     {
         id: 8,
-        voltage: 80,
-        wattage: 800,
+        voltage: 8,
+        wattage: 80,
     },
     {
         id: 9,
@@ -71,8 +71,8 @@ const data = [
     },
     {
         id: 14,
-        voltage: 40,
-        wattage: 400,
+        voltage: 4,
+        wattage: 40,
     },
     {
         id: 15,
@@ -136,8 +136,8 @@ const data = [
     },
     {
         id: 27,
-        voltage: 70,
-        wattage: 700,
+        voltage: 7,
+        wattage: 70,
     },
     {
         id: 28,
@@ -166,6 +166,6 @@ test('Solar Grid is rendering the panel grid correctly', () => {
     for (let i = 0; i < 30; i += 1) {
         expect(solarGridCells[i]).toHaveTextContent(`${data[i].voltage} V`);
         expect(solarGridCells[i]).toHaveTextContent(`${data[i].wattage} W`);
-        expect(solarGridCells[i]).toHaveStyle(`background-color: ${data[i].voltage < 10 && data[i].wattage < 200 ? 'red.400' : 'green.400'}`);
+        expect(solarGridCells[i]).toHaveAttribute('data-bgcolor', data[i].voltage < 10 && data[i].wattage < 200 ? 'weak' : 'healthy');
     }
 });

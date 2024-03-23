@@ -23,7 +23,7 @@ function SolarGrid({ data }:Props) {
                             rounded="md"
                             key={item.id}
                             p="2"
-                            bg={item.voltage < 10 && item.wattage < 200 ? 'red.400' : 'green.400'}
+                            data-bgcolor={item.voltage < 10 && item.wattage < 200 ? 'weak' : 'healthy'}
                             textAlign="center"
                             fontSize="xs"
                             fontWeight="bold"
