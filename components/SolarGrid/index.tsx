@@ -4,6 +4,7 @@ import {Box, Grid, GridItem, Text} from "@chakra-ui/react";
 type Props = {
     data: Array<{
         id: number|string,
+        time: string,
         wattage: number,
         voltage: number,
     }>,
@@ -17,7 +18,7 @@ const SolarGrid = ({ data }:Props) => (
                 data.map((item) => (
                     <GridItem
                         rounded="md"
-                        key={item.id}
+                        key={`${item.id}-${item.time}`}
                         p="2"
                         bg={item.voltage < 10 && item.wattage < 200 ? 'red.400' : 'green.400'}
                         textAlign="center"

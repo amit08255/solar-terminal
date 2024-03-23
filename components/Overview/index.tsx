@@ -3,7 +3,16 @@ import {Box, Text} from "@chakra-ui/react";
 import OverviewIndicatorText from "./indicatorText";
 import OverviewStatsText from "./statsText";
 
-const Overview = () => (
+type Props = {
+    totalPanels: number,
+    weakPanels: number,
+    healthyPanels: number,
+    totalYield: number,
+}
+
+const Overview = ({
+    totalPanels, weakPanels, healthyPanels, totalYield,
+}:Props) => (
     <Box
         py="4"
         px="6"
@@ -16,10 +25,10 @@ const Overview = () => (
         display="flex"
         alignItems="center"
     >
-        <OverviewIndicatorText color="blackAlpha.500" text="30 Total Panels" />
-        <OverviewIndicatorText ml="10" className="glow-weak" color="red.500" text="10 Weak Panels" />
-        <OverviewIndicatorText ml="10" className="glow-healthy" color="green.500" text="10 Healthy Panels" />
-        <OverviewStatsText unit="kWh" color="blackAlpha.600" label="Total Yield" value="4500" ml="10" />
+        <OverviewIndicatorText color="blackAlpha.500" text={`${totalPanels} Total Panels`} />
+        <OverviewIndicatorText ml="10" className="glow-weak" color="red.500" text={`${weakPanels} Weak Panels`} />
+        <OverviewIndicatorText ml="10" className="glow-healthy" color="green.500" text={`${healthyPanels} Healthy Panels`} />
+        <OverviewStatsText unit="kWh" color="blackAlpha.600" label="Total Yield" value={totalYield} ml="10" />
     </Box>
 );
 
