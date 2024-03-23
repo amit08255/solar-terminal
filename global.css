@@ -1,0 +1,43 @@
+@keyframes glow-healthy {
+    0% {
+        background-color: var(--chakra-colors-green-100);
+    }
+    25% {
+        background-color: var(--chakra-colors-green-200);
+    }
+    50% {
+        background-color: var(--chakra-colors-green-300);
+    }
+    75% {
+        background-color: var(--chakra-colors-green-400);
+    }
+    100% {
+        background-color: var(--chakra-colors-green-500);
+    }
+}
+
+.glow-healthy {
+    animation: glow-healthy 1s infinite alternate;
+}
+
+@keyframes glow-weak {
+    0% {
+        background-color: var(--chakra-colors-red-100);
+    }
+    25% {
+        background-color: var(--chakra-colors-red-200);
+    }
+    50% {
+        background-color: var(--chakra-colors-red-300);
+    }
+    75% {
+        background-color: var(--chakra-colors-red-400);
+    }
+    100% {
+        background-color: var(--chakra-colors-red-500);
+    }
+}
+
+.glow-weak {
+    animation: glow-weak 1s infinite alternate;
+}
