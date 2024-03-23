@@ -1,12 +1,14 @@
 'use client';
 
-import {Box, Container} from "@chakra-ui/react";
-import Overview from "../components/Overview";
-import SolarGrid from "../components/SolarGrid";
-import usePanelUpdates from "../hooks/usePanelUpdates";
+import { Box, Container } from '@chakra-ui/react';
+import Overview from '../components/Overview';
+import SolarGrid from '../components/SolarGrid';
+import usePanelUpdates from '../hooks/usePanelUpdates';
 
 export default function Page() {
-    const { latestData, totalOutputKWh, weakPanels, healthyPanels } = usePanelUpdates();
+    const {
+        latestData, totalOutputKWh, weakPanels, healthyPanels,
+    } = usePanelUpdates();
 
     return (
         <>

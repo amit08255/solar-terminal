@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-import {useEffect, useState} from "react";
+import { useEffect, useState } from 'react';
 
 const usePanelUpdates = () => {
     const [latestData, setLatestData] = useState([]);
@@ -25,7 +25,7 @@ const usePanelUpdates = () => {
             let weakPanelsCount = 0;
             let healthyPanelsCount = 0;
 
-            latest.forEach(panel => {
+            latest.forEach((panel) => {
                 if (panel.voltage < 10 && panel.wattage < 200) {
                     weakPanelsCount += 1;
                 } else {
@@ -45,7 +45,9 @@ const usePanelUpdates = () => {
         }
     }, [data]);
 
-    return { latestData, totalOutputKWh, weakPanels, healthyPanels };
+    return {
+        latestData, totalOutputKWh, weakPanels, healthyPanels,
+    };
 };
 
 export default usePanelUpdates;
