@@ -15,7 +15,7 @@ function Overview({
 }:Props) {
     return (
         <Box
-            py="4"
+            pt="4"
             px="6"
             w="full"
             rounded="lg"
@@ -25,11 +25,12 @@ function Overview({
             borderColor="gray.100"
             display="flex"
             alignItems="center"
+            flexWrap="wrap"
         >
-            <OverviewIndicatorText color="blackAlpha.500" text={`${totalPanels} Total Panels`} />
-            <OverviewIndicatorText ml="10" className="glow-weak" color="red.500" text={`${weakPanels} Weak Panels`} />
-            <OverviewIndicatorText ml="10" className="glow-healthy" color="green.500" text={`${healthyPanels} Healthy Panels`} />
-            <OverviewStatsText unit="kWh" color="blackAlpha.600" label="Total Yield" value={totalYield} ml="10" />
+            <OverviewIndicatorText mr="10" color="blackAlpha.500" text={`${totalPanels} Total Panels`} />
+            <OverviewIndicatorText mr="10" className="glow-weak" color="red.500" text={`${weakPanels} Weak Panels`} />
+            <OverviewIndicatorText mr="10" className="glow-healthy" color="green.500" text={`${healthyPanels} Healthy Panels`} />
+            <OverviewStatsText unit="kWh" color="blackAlpha.600" label="Total Yield" value={totalYield} />
         </Box>
     );
 }

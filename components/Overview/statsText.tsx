@@ -6,15 +6,14 @@ type Props = {
     value: string|number;
     unit: string;
     color?: string;
-    ml?: string;
 }
 
 function OverviewStatsText({
-    color, ml, value, unit, label,
+    color, value, unit, label,
 }:Props) {
     return (
-        <Box display="flex" alignItems="center">
-            <Text ml={ml} fontSize="sm" color={color}>{label}</Text>
+        <Box display="flex" alignItems="center" pb="4">
+            <Text fontSize="sm" color={color}>{label}</Text>
             <Text ml="1.5" fontSize="md" fontWeight="bold">{value}</Text>
             <Text ml="1.5" color="blackAlpha.600" fontSize="md" fontWeight="bold">{unit}</Text>
         </Box>
@@ -22,7 +21,6 @@ function OverviewStatsText({
 }
 
 OverviewStatsText.defaultProps = {
-    ml: '0',
     color: 'blackAlpha.500',
 };
 

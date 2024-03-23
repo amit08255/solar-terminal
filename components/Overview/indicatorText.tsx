@@ -5,14 +5,14 @@ type Props = {
     text: string;
     color?: string;
     className?: string;
-    ml?: string;
+    mr?: string;
 };
 
 function OverviewIndicatorText({
-    color, text, className, ml,
+    color, text, className, mr,
 }:Props) {
     return (
-        <Box display="flex" alignItems="center">
+        <Box pb="4" display="flex" alignItems="center" minW="max-content">
             <Box
                 data-testid="indicator"
                 height="8px"
@@ -20,16 +20,15 @@ function OverviewIndicatorText({
                 borderRadius="50%"
                 bg={color}
                 className={className}
-                ml={ml}
             />
-            <Text ml="1.5" fontSize="md" fontWeight="bold">{text}</Text>
+            <Text ml="1.5" fontSize="md" fontWeight="bold" mr={mr}>{text}</Text>
         </Box>
     );
 }
 
 OverviewIndicatorText.defaultProps = {
     className: '',
-    ml: '0',
+    mr: '0',
     color: 'blackAlpha.500',
 };
 
