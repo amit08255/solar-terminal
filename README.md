@@ -45,7 +45,7 @@
 
 ## ➤ Table of Contents
 
-* [➤ Walkthrough](#walkthrough)
+* [➤ Walkthrough](#-walkthrough)
     * [Built With](#built-with)
     * [File Structure](#file-structure)
     * [Testing Setup](#testing-setup)
