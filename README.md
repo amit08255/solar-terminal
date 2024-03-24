@@ -35,6 +35,8 @@
   </h3>
 </div>
 
+<img src="./.docs/demo.gif" />
+
 > Solar terminal is a monitoring dashboard built over **React** to monitor status of panels in farm. It uses Next.js API routes for providing API for updates.
 
 <details>
